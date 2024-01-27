@@ -89,35 +89,38 @@ const Feed = () => {
   }, []);
 
   const fetchAllPost = async (limit = visiblePosts) => {
-    if (posts.length < limit) {
-      try {
-        const response = await axios.get(
-          "https://jsonplaceholder.typicode.com/posts",
-          {
-            params: {
-              _start: posts.length,
-              _limit: limit,
-            },
-          }
-        );
-
-        response.data.forEach((post) => {
-          const user = allUsers.find((user) => user.id === post.userId);
-          dispatch({
-            type: "STORE_POST",
-            payload: {
-              postId: post.id || "",
-              ownerId: post.userId || "",
-              title: post.title || "",
-              body: post.body || "",
-              userName: name?.userName || "",
-              likes: [],
-              token: user?.token || "",
-            },
+    if (posts.length<=0) {
+      
+      if (posts.length < limit) {
+        try {
+          const response = await axios.get(
+            "https://jsonplaceholder.typicode.com/posts",
+            {
+              params: {
+                _start: posts.length,
+                _limit: limit,
+              },
+            }
+          );
+  
+          response.data.forEach((post) => {
+            const user = allUsers.find((user) => user.id === post.userId);
+            dispatch({
+              type: "STORE_POST",
+              payload: {
+                postId: post.id || "",
+                ownerId: post.userId || "",
+                title: post.title || "",
+                body: post.body || "",
+                userName: name?.userName || "",
+                likes: [],
+                token: user?.token || "",
+              },
+            });
           });
-        });
-      } catch (error) {
-        console.log(error);
+        } catch (error) {
+          console.log(error);
+        }
       }
     }
   };
