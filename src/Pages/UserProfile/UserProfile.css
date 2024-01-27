@@ -1,0 +1,33 @@
+.user_profile_photo{
+    border-radius: 50%;
+    border:2px solid gray;
+font-size: 120px;
+width: 200px;
+height: 200px;
+margin:20px;
+}
+
+.user_profile{
+    height: 220px;
+    width:70%;
+}
+
+.user_profile_details{
+    font-size: 50px;
+    margin: 20px 0 0 30px;
+}
+.btn{
+    background-color: white!important;
+    border-color: white !important;
+    color: gray !important;
+     
+}
+.btn:hover{
+    background-color: gray!important;
+    border-color: gray !important;
+    color: white;
+     
+}
+.card-header{
+    font-size: 20px;    
+}

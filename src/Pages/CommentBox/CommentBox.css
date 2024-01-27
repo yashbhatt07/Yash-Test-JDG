@@ -1,0 +1,26 @@
+.comment_box{
+    height: 70% !important;
+    background-color: #3a3535;
+    color: whitesmoke;
+    }
+
+    .form-control:active,
+.form-control:focus,
+.form-control:focus:active {
+  background-color: gray!important;
+  border-color: gray;
+  color: white;
+}
+
+.btn{
+    background-color: white!important;
+    border-color: white !important;
+    color: gray !important;
+     
+}
+.btn:hover{
+    background-color: gray!important;
+    border-color: gray !important;
+    color: white;
+     
+}

@@ -1,0 +1,13 @@
+.container{
+    width: 400px;
+    margin:auto ;
+}
+
+.login{
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    margin: auto;
+    color:white;
+  }
+  
